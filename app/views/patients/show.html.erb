@@ -1,0 +1,13 @@
+<h1>Patient page</h1>
+<%= @patient.name %>
+<br>
+<h2> Doctors </h2>
+  <% @patient.doctors.uniq.each do |doctor| %>
+  <%= link_to doctor.name, doctor_path(doctor) %>
+<br>
+  <% doctor.appointments.each do |apt| %>
+    <%= apt.date %>
+  <h3> Appointment Notes: </h3>
+    <%= apt.notes %>
+<% end %>
+<% end %>

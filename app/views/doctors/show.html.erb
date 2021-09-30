@@ -1,0 +1,8 @@
+<h1>Doctor page</h1>
+<%= @doctor.name %>
+<br>
+<h2> Patients </h2>
+  <% @doctor.patients.uniq.each do |patient| %>
+  <%= link_to patient.name, patient_path(patient) %>
+<br>
+  <% end %>
